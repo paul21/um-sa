@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sa-svc
+  labels:
+    run: sa
+spec:
+  ports:
+  - port: 25
+    name: smtp
+    targetPort: 25
+    protocol: TCP
+  - port: 53
+    name: dns
+    targetPort: 53
+    protocol: UDP
+  - port: 80
+    name: user-http
+    targetPort: 80
+    protocol: TCP
+  - port: 8080
+    name: webmin-http
+    targetPort: 10000
+    protocol: TCP
+  selector:
+    app: sa
+  type: NodePort

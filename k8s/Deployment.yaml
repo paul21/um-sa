@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sa-deploy
+  labels:
+    app: sa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sa
+  template:
+    metadata:
+      generateName: sa-
+      labels:
+        app: sa
+        version: latest
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: sa
+          image: localhost:5000/sa-full
+          ports:
+            - name: smtp
+              containerPort: 25
+            - name: dns
+              containerPort: 53
+            - name: http
+              containerPort: 80
+            - name: webmin
+              containerPort: 10000
+          volumeMounts:
+          - mountPath: /data
+            name: sa-disk
+      volumes:
+        - name: sa-disk
+          persistentVolumeClaim:
+            claimName: sa-claim
