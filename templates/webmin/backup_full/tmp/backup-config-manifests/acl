@@ -1,0 +1,7 @@
+/etc/webmin/miniserv.users
+/etc/webmin/webmin.acl
+/etc/webmin/root.acl
+/etc/webmin/%{USERNAME}%.acl
+/etc/webmin/config.aclbackup
+/etc/webmin/miniserv.conf.aclbackup
+/etc/webmin/acl/config

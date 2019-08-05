@@ -1,0 +1,9 @@
+/etc/webmin/config
+/etc/webmin/miniserv.conf
+/etc/webmin/webmin.cats
+/etc/webmin/webmin.catnames
+/etc/webmin/webmin.desc
+/etc/webmin/miniserv.pem
+/etc/webmin/newmodules
+/etc/webmin/custom-lang
+/etc/webmin/webmin/config
